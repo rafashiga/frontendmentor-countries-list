@@ -74,13 +74,12 @@ export default function CountryPage({ country }: CountryProps) {
 									Border Countries:
 								</b>
 								<div className='flex flex-wrap gap-2'>
-									{country.borders.map((item) => (
-										<span
-											key={item}
-											className='mr-2 py-1 px-5 rounded shadow-lg dark:bg-darkBlue'
-										>
-											{item}
-										</span>
+									{country.borders.map((border) => (
+										<Link key={border} href={border}>
+											<a className='mr-2 py-1 px-5 font-normal rounded shadow-lg dark:bg-darkBlue hover:opacity-80'>
+												{border}
+											</a>
+										</Link>
 									))}
 								</div>
 							</div>
