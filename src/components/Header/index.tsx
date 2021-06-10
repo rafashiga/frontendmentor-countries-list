@@ -37,7 +37,7 @@ function Header({ theme: nextTheme }: HeaderProps) {
 					onClick={() => toggleTheme()}
 					className='flex items-center gap-2 font-medium hover:opacity-80 transition-all duration-500'
 				>
-					<IoMoonOutline />
+					{theme === 'dark' ? <IoMoonOutline /> : <IoMoonSharp />}
 					Dark Mode
 				</button>
 			</div>
