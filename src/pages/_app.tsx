@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app';
 import NextNprogress from 'nextjs-progressbar';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const [theme, setTheme] = useState('light');
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				stopDelayMs={200}
 				height={3}
 			/>
+			<Footer />
 		</div>
 	);
 }

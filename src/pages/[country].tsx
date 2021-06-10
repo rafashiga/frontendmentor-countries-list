@@ -23,7 +23,7 @@ export default function CountryPage({ country }: CountryProps) {
 				title={`Country Detail: ${country.name}`}
 				description='Simple project to show a list of countries'
 			/>
-			<div className='pt-16 w-10/12 m-auto dark:text-white'>
+			<div className='pt-16 w-10/12 m-auto dark:text-white mb-64'>
 				<Link href='/'>
 					<a className='hover:opacity-80 transition-all duration-75 flex items-center gap-2 w-36 shadow-md py-2 px-10 dark:bg-darkBlue'>
 						<BsArrowLeft />
