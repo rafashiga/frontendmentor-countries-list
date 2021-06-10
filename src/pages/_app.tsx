@@ -1,12 +1,14 @@
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
 import NextNprogress from 'nextjs-progressbar';
 
 import Header from '../components/Header';
 
 function MyApp({ Component, pageProps }: AppProps) {
+	const [theme, setTheme] = useState('light');
+
 	useEffect(() => {
 		if (
 			localStorage.theme === 'dark' ||
@@ -15,15 +17,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 		) {
 			localStorage.theme = 'dark';
 			document.documentElement.classList.add('dark');
+			setTheme('dark');
 		} else {
 			localStorage.theme = 'light';
 			document.documentElement.classList.remove('dark');
+			setTheme('light');
 		}
 	}, []);
 
 	return (
-		<div className='bg-lightGray dark:bg-darkGray'>
-			<Header />
+		<div className='bg-lightGray dark:bg-darkGray min-h-screen'>
+			<Header theme={theme} />
 			<Component {...pageProps} />
 			<NextNprogress
 				color='#00a2ff'
