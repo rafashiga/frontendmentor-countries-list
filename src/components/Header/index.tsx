@@ -29,7 +29,7 @@ function Header({ theme: nextTheme }: HeaderProps) {
 		<header className='w-full pt-4 pb-4 shadow-md z-10 dark:bg-darkBlue dark:text-white'>
 			<div className='w-10/12 m-auto flex justify-between'>
 				<Link href='/'>
-					<a className='font-bold text-2xl'>Where in the world?</a>
+					<a className='font-bold md:text-2xl'>Where in the world?</a>
 				</Link>
 				<button
 					aria-label={`change theme to ${theme}`}
