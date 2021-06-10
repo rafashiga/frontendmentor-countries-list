@@ -32,3 +32,5 @@
 - [React icons](https://react-icons.github.io/react-icons/)
 - [nextjs-progressbar](https://github.com/apal21/nextjs-progressbar)
 - [Next SEO](https://github.com/garmeeh/next-seo)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [REST Countries](https://restcountries.eu/)
