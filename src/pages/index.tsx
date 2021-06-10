@@ -79,6 +79,7 @@ export default function Home({ countries: Countries }: HomeProps) {
 						<div className='relative mb-10 md:mb-0'>
 							<BsSearch className='absolute top-5 left-6 dark:text-white text-gray' />
 							<input
+								aria-label='search for a country'
 								type='text'
 								className='border-none rounded dark:text-white py-4 pl-16 w-full md:w-96 shadow dark:bg-darkBlue dark:placeholder-white'
 								placeholder='Search for a country...'
@@ -89,6 +90,7 @@ export default function Home({ countries: Countries }: HomeProps) {
 							/>
 						</div>
 						<select
+							aria-label='filter by region'
 							onChange={toggleRegion}
 							value={region}
 							className='p-4 mb-5 md:mb-0 shadow rounded dark:bg-darkBlue dark:text-white'
