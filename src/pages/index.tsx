@@ -19,13 +19,13 @@ export default function Home({ countries: Countries }: HomeProps) {
 	const [search, setSearch] = useState('');
 	const [loading, setLoading] = useState(false);
 
-	const handleSearch = async () => {
+	const handleSearch = async (event?: any) => {
+		const inputValue = event?.target.value && search;
 		setRegion('');
 		if (search.length >= 2) {
 			try {
 				setLoading(true);
-
-				const res = await api.get(`/name/${search}`);
+				const res = await api.get(`/name/${inputValue}`);
 				setCountries(res.data);
 				setLoading(false);
 			} catch {
@@ -36,14 +36,14 @@ export default function Home({ countries: Countries }: HomeProps) {
 	};
 
 	const toggleRegion = async (event: any) => {
-		setRegion(event.target.value);
+		const selectValue = event.target.value;
+		setRegion(selectValue);
 		setSearch('');
-
 		setLoading(true);
 		try {
 			let res;
 			if (region) {
-				res = await api.get(`/region/${region}`);
+				res = await api.get(`/region/${selectValue}`);
 			} else {
 				res = await api.get(`/all`);
 			}
