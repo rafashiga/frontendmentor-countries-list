@@ -132,11 +132,20 @@ export default function Home({ countries: Countries }: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-	const response = await api.get('/all');
+	try {
+		const response = await api.get('/all');
 
-	return {
-		props: {
-			countries: response.data,
-		},
-	};
+		return {
+			props: {
+				countries: response.data,
+			},
+		};
+	} catch (error) {
+		console.log(error);
+		return {
+			props: {
+				countries: [],
+			},
+		};
+	}
 };
